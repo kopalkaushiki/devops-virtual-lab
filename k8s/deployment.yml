@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: devops-container
-          image: devops-lab-app
-          imagePullPolicy: Never
+          image: kopalkaushiki/devops-lab-app
+          imagePullPolicy: Always
           ports:
             - containerPort: 80

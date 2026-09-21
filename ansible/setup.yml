@@ -1,0 +1,22 @@
+---
+- name: Configure DevOps Environment
+  hosts: localhost
+  connection: local
+  become: false
+
+  tasks:
+    - name: Check Docker installation
+      command: docker --version
+      register: docker_version
+
+    - name: Display Docker version
+      debug:
+        msg: "{{ docker_version.stdout }}"
+
+    - name: Check Kubernetes installation
+      command: kubectl version --client
+      register: kubectl_version
+
+    - name: Display Kubernetes version
+      debug:
+        msg: "{{ kubectl_version.stdout }}"
